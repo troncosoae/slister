@@ -1,0 +1,6 @@
+ALTER TABLE List RENAME TO Lists;
+
+ALTER TABLE Items
+ADD CONSTRAINT fk_lists
+FOREIGN KEY (lid)
+REFERENCES Lists (lid);
