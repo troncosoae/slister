@@ -11,7 +11,13 @@ exports.start = async function() {
 
     await migrate.run({user, host, database, password, port})
 
-    this.pool = new Pool({user, host, database, password, port})
+    // this.pool = new Pool({user, host, database, password, port})
+    this.pool = new Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
+    })
 }
 
 exports.close = async function() {
