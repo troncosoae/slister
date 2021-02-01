@@ -1,1 +1,1 @@
-web : cross-env NODE_PATH=src node src/index.js
+web : node src/index.js
