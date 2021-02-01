@@ -14,10 +14,9 @@ exports.start = async function() {
     // this.pool = new Pool({user, host, database, password, port})
     this.pool = new Pool({
         connectionString: process.env.DATABASE_URL,
-        ssl: {
-            rejectUnauthorized: false
-        }
+        ssl: true
     })
+
 }
 
 exports.close = async function() {
